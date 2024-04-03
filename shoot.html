@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pool Game - Player Names</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(145deg, #121212, #1c1c1c);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #f5f5f5;
+        }
+
+        h1 {
+            color: #f5f5f5;
+            margin-top: 30px;
+            font-weight: 700;
+        }
+
+        form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            width: 320px;
+            margin-top: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            color: #f5f5f5;
+            font-weight: 400;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid #555;
+            border-radius: 5px;
+            background: #222;
+            color: #f5f5f5;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #gameStatus {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            background-color: #333;
+            border: 2px solid #555;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            color: #f5f5f5;
+        }
+
+        #svgContainer {
+            width: 1500px; /* Half of SVG width */
+            height: 3000px; /* SVG height */
+            border: 2px solid #555;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+            background-color: #222;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        #svgContainer svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>POOLGAME</h1>
+    <form id="playerNamesForm">
+        <label for="player1Name">Player 1 Name:</label>
+        <input type="text" id="player1Name" name="player1Name" required>
+        <label for="player2Name">Player 2 Name:</label>
+        <input type="text" id="player2Name" name="player2Name" required>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="gameStatus">
+        Server randomly decides that anbu shall play<br>
+        Low Ball Player :- *to be identified*<br>
+        High Ball Player:- *to be identified*
+    </div>
+    <div id="svgContainer">
+        <!-- SVG will be loaded here -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="gameInteraction.js"></script>
+</body>
+</html>
